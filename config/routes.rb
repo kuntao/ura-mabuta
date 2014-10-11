@@ -2,6 +2,12 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  resources :users, only: [:index, :create]
+  post "follows" => "follows#create"
+  get "follows" => "follows#index"
+  post "foods" => "foods#create"
+  get "foods" => "foods#index"
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
